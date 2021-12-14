@@ -1,0 +1,72 @@
+﻿@model IEnumerable<AgenciaVoo.Models.Destino>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="color: blueviolet;">DECOLAR RECODE</h1>
+
+<div class="d-grid gap-2 d-md-block">
+ <a asp-action="Create"><button class="btn btn-info" type="button">Criar Cadastro De Vôo</button></a> 
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Celular)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RG)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Saida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Chegada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Horario)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Celular)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Saida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Chegada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Horario)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.DestinoId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.DestinoId">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.DestinoId">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
